@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Jrkf9zODhXh+o0kZdD71KOt2ZzKyKkzo5xjruA2ZiOghf3FtPcB6voFHTddRqBwRZjMFO7oqJNROw4PjtdDcPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Programacion</title>
+</head>
+<body>
+
+      <nav class="navbar  fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Productos el caribe</a>
+            <a class="navbar-brand" href="#" style="text-align: center;">Andres Moreno</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <!-- Aquí puedes agregar más elementos de la barra de navegación -->
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="principal.html">Procesos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Programar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Cerrar sesiön</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+      <div id="contPrincipal" class="container-lg" style="width: 100%; display: block;"> 
+            <div class="tabs">
+                <button class="tablink" onclick="openTab('Semanal')">Semanal</button>
+                <button class="tablink" onclick="openTab('Diario')">Diario</button>
+                <button class="tablink" onclick="openTab('Operario')">Operario</button>
+                <button class="imprimir-btn btn-success" onclick="imprimirGrid()">Imprimir</button>
+            </div>
+            
+            <div id="Semanal" class="tabcontent">
+                 <input type="text" id="filtro" placeholder="Filtrar...">
+                 
+                <table class="table table-hover" id="gridProcesos" >
+                    <!-- Contenido de la tabla Semanal -->
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Saldbpt</th>
+                        <th scope="col">DiaslnvLog</th>
+                        <th scope="col">ReqLog</th>
+                        <th scope="col">Saldpp</th>
+                        <th scope="col">Ppdant</th>
+                        <th scope="col">Saldtcom</th>
+                        <th scope="col">DiasInvLot</th>
+                        <th scope="col">CANTSUG</th>
+                        <th scope="col">CANTAPROGRAMAR</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Nota</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">207</th>
+                        <td>SUPER PERRO INDIVIDUAL 50G</td>
+                        <td>203</td>
+                        <td>0.28</td>
+                        <td>1.604</td>
+                        <td>824</td>
+                        <td>0</td>
+                        <td>1.403</td>
+                        <td>3.36</td>
+                        <td>1.2</td>
+                        <td><input type="text" placeholder="cantidad a programar"></td>
+                        <td>2024-05-10</td>
+                        <td><input type="text" placeholder="Nota"></td>
+            
+                        </tr>
+                        <tr>
+                        <th scope="row">2322</th>
+                        <td>TOSTADAS INTEGRALES 140G</td>
+                        <td>2822</td>
+                        <td>3.47</td>
+                        <td>1.243</td>
+                        <td>3.356</td>
+                        <td>0</td>
+                        <td>5.391</td>
+                        <td>14.23</td>
+                        <td>0.0</td>
+                        <td><input type="text" placeholder="cantidad a programar"></td>
+                        <td>2024-05-15</td>
+                        <td><input type="text" placeholder="Nota"></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2341</th>
+                        <td>BIZCOCHITOS 160 G</td>
+                        <td>183</td>
+                        <td>1.85</td>
+                        <td>312</td>
+                        <td>416</td>
+                        <td>0</td>
+                        <td>650</td>
+                        <td>12.62</td>
+                        <td>0.0</td>
+                        <td><input type="text" placeholder="cantidad a programar"></td>
+                        <td>2024-05-18</td>
+                        <td><input type="text" placeholder="Nota"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="Diario" class="tabcontent">
+                <table class="table table-hover" id="gridProcesos" >
+                    <!-- Contenido de la tabla Diario -->
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">PromedioVenta</th>
+                        <th scope="col">Saldo B03</th>
+                        <th scope="col">Saldo B04</th>
+                        <th scope="col">Saldo total</th>
+                        <th scope="col">Bache día anterior</th>
+                        <th scope="col">CANTSUG</th>
+                        <th scope="col">CANTAPROGRAMAR</th>
+                        <th scope="col">Fecha</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">207</th>
+                        <td>SUPER PERRO INDIVIDUAL 50G</td>
+                        <td>203</td>
+                        <td>0.28</td>
+                        <td>1.604</td>
+                        <td>824</td>
+                        <td>0</td>
+                        <td>1.403</td>
+                        <td><input type="text" placeholder="cantidad a programar"></td>
+
+                        <td id="fechaActual"></td>
+            
+                        </tr>
+                        <tr>
+                        <th scope="row">2322</th>
+                        <td>TOSTADAS INTEGRALES 140G</td>
+                        <td>2822</td>
+                        <td>3.47</td>
+                        <td>1.243</td>
+                        <td>3.356</td>
+                        <td>0</td>
+                        <td>5.391</td>
+                        <td><input type="text" placeholder="cantidad a programar"></td>
+                        <td id="fechaActual"></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2341</th>
+                        <td>BIZCOCHITOS 160 G</td>
+                        <td>183</td>
+                        <td>1.85</td>
+                        <td>312</td>
+                        <td>416</td>
+                        <td>0</td>
+                        <td>650</td>
+                        <td><input type="text" placeholder="cantidad a programar"></td>
+                        <td id="fechaActual"></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            
+            <div id="Operario" class="tabcontent">
+                <table class="table table-hover" id="gridOperario" >
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Operario</th>
+                        <th scope="col">Proceso</th>
+                        <th scope="col">Fecha desde</th>
+                        <th scope="col">Fecha hasta</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Contenido de la tabla Operario -->
+                    <tr>
+                        <th scope="row">Andres Ospina</th>
+                        <td>Mezclas</td>
+                        <td>2024-05-10</td>
+                        <td>2024-05-25</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fernando Arturo Restrepo</th>
+                        <td>Armado</td>
+                        <td>2024-05-10</td>
+                        <td>2024-05-25</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Carlos Osorio</th>
+                        <td>Mezclas</td>
+                        <td>2024-05-10</td>
+                        <td>2024-05-15</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fernanda Bedoya</th>
+                        <td>Ocimetria</td>
+                        <td>2024-05-12</td>
+                        <td>2024-06-18</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+         </div>
+
+            <div id="calendar" class="wrapper calendar" style="width: 30%; display: none;"></div>
+            <div id="details" style="display: none;"></div>
+
+            <script src="programacion.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const calendar = document.getElementById('calendar');
+                    const details = document.getElementById('details');
+                    const today = new Date();
+                    let selectedDate = today;
+                    const people = ["Mauricio Perez", "Andres Ospina", "David Arango"]; // Lista de personas
+                    const tasks = ["Mezclas", "Armado", "Ocimetria"]; // Lista de tareas
+                    const assignments = {}; // Almacena las asignaciones de tarea por fecha
+
+                    function generateCalendar(year, month) {
+                        const daysInMonth = new Date(year, month + 1, 0).getDate();
+                        const firstDayOfMonth = new Date(year, month, 1).getDay();
+                        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+                        let html = `
+                            <h2>${monthNames[month]} ${year}</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Sun</th>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        `;
+
+                        let dayCount = 1;
+
+                        // Rellenar espacios vacíos hasta el primer día del mes
+                        for (let i = 0; i < 6; i++) {
+                            html += '<tr>';
+                            for (let j = 0; j < 7; j++) {
+                                if (i === 0 && j < firstDayOfMonth) {
+                                    html += '<td></td>';
+                                } else if (dayCount > daysInMonth) {
+                                    break;
+                                } else {
+                                    const dateString = `${year}-${month + 1 < 10 ? '0' : ''}${month + 1}-${dayCount < 10 ? '0' : ''}${dayCount}`;
+                                    html += `<td data-date="${dateString}">${dayCount}</td>`;
+                                    dayCount++;
+                                }
+                            }
+                            html += '</tr>';
+                            if (dayCount > daysInMonth) {
+                                break;
+                            }
+                        }
+
+                        html += `
+                                </tbody>
+                            </table>
+                        `;
+
+                        calendar.innerHTML = html;
+                    }
+
+                    function showDetails() {
+                        const dateString = selectedDate.toISOString().split('T')[0];
+                        const assignedTasks = assignments[dateString] || [];
+                        let html = '<h3>Tareas Asignadas para ' + dateString + '</h3>';
+                        html += '<ul>';
+                        assignedTasks.forEach(assignment => {
+                            html += `<li>${assignment.person}: ${assignment.task} - ${assignment.endDate}</li>`;
+                        });
+                        html += '</ul>';
+                        details.innerHTML = html;
+                    }
+
+                    function assignTask(person, task, endDate) {
+                        const dateString = selectedDate.toISOString().split('T')[0];
+                        if (!assignments[dateString]) {
+                            assignments[dateString] = [];
+                        }
+                        assignments[dateString].push({ person, task, endDate });
+                        showDetails();
+                        generateCalendar(selectedDate.getFullYear(), selectedDate.getMonth());
+                        updateOperarioTable(person, task, dateString, endDate);
+                    }
+
+                    function updateOperarioTable(person, task, startDate, endDate) {
+                        const tableBody = document.querySelector('#gridOperario tbody');
+                        const newRow = `
+                            <tr>
+                                <td>${person}</td>
+                                <td>${task}</td>
+                                <td>${startDate}</td>
+                                <td>${endDate}</td>
+                            </tr>
+                        `;
+                        tableBody.insertAdjacentHTML('beforeend', newRow);
+                    }
+
+                    generateCalendar(today.getFullYear(), today.getMonth());
+                    showDetails();
+
+                    calendar.addEventListener('click', (event) => {
+                        const td = event.target.closest('td');
+                        if (td) {
+                            const dateString = td.dataset.date;
+                            if (dateString) {
+                                selectedDate = new Date(dateString);
+                                showDetails();
+                                // Mostrar el formulario de asignación de tareas
+                                showAssignmentForm(selectedDate);
+                            }
+                        }
+                    });
+
+                    // Función para mostrar el formulario de asignación de tareas
+                    function showAssignmentForm(date) {
+                        const assignForm = document.createElement('div');
+                        assignForm.innerHTML = `
+                            <h3>Asignar Proceso para ${date.toDateString()}</h3>
+                            <label for="person">Persona:</label>
+                            <select id="person">
+                                ${people.map(person => `<option value="${person}">${person}</option>`).join('')}
+                            </select>
+                            <label for="task">Proceso:</label>
+                            <select id="task">
+                                ${tasks.map(task => `<option value="${task}">${task}</option>`).join('')}
+                            </select>
+                            <label for="endDate">Fecha de finalización:</label>
+                            <input type="date" id="endDate">
+                            <button id="assignBtn">Asignar</button>
+                        `;
+                        details.appendChild(assignForm);
+
+                        const assignBtn = document.getElementById('assignBtn');
+                        assignBtn.addEventListener('click', () => {
+                            const person = document.getElementById('person').value;
+                            const task = document.getElementById('task').value;
+                            const endDate = document.getElementById('endDate').value;
+                            if (person && task && endDate) {
+                                assignTask(person, task, endDate);
+                                // Limpiar el formulario después de asignar la tarea
+                                assignForm.remove();
+                            }
+                        });
+                    }
+                    
+                });
+
+            </script>
+            
+</body>
+</html>

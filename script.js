@@ -205,3 +205,46 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// programador
+
+document.addEventListener('DOMContentLoaded', function () {
+    const calendar = document.getElementById('calendar');
+    const details = document.getElementById('details');
+    const today = new Date();
+    let selectedDate = today;
+
+    function generateCalendar(year, month) {
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const firstDayIndex = new Date(year, month, 1).getDay();
+        
+        calendar.innerHTML = '';
+
+        for (let i = 0; i < firstDayIndex; i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.classList.add('day');
+            calendar.appendChild(emptyDay);
+        }
+
+        for (let i = 1; i <= daysInMonth; i++) {
+            const day = document.createElement('div');
+            day.classList.add('day');
+            day.textContent = i;
+
+            day.addEventListener('click', () => {
+                selectedDate = new Date(year, month, i);
+                showDetails();
+            });
+
+            calendar.appendChild(day);
+        }
+    }
+
+    function showDetails() {
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        details.innerHTML = `<h2>${selectedDate.toLocaleDateString('es-ES', options)}</h2>`;
+        // Aquí puedes agregar la lógica para mostrar las personas y tareas asignadas para la fecha seleccionada.
+    }
+
+    generateCalendar(today.getFullYear(), today.getMonth());
+    showDetails();
+});
